@@ -9,6 +9,37 @@ A Simple Vite Project
 - Prettier
 - Husky precommit scripts
 - Jest and testing-library
+- Docker
+
+## How to use
+
+- ### With npm
+
+  ```bash
+  npm i
+  npm run start
+
+  ```
+
+- ### With docker
+
+  - #### For dev mode
+
+    ```bash
+    docker build -t tsrv-dev -f ./Dockerfile.dev .
+    docker run -d -p 5173:5173 -v ./src:/app/src --name tsrv-dev-container tsrv-dev
+
+    ```
+
+  - #### For production mode
+
+    ```bash
+    docker build -t tsrv-prod .
+    docker run -d -p 5173:80 --name tsrv-prod-container tsrv-prod
+
+    ```
+
+Open http://localhost:5173/ in your browser
 
 ## Available commands
 
